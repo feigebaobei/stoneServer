@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/stoneServer",
+    "nm": "nodemon ./bin/stoneServer",
     "dev": "node --inspect ./bin/stoneServer"
   },
   "dependencies": {

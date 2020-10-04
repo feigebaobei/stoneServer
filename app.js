@@ -9,6 +9,7 @@ var config = require('./lib/config')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var randomCodeRouter = require('./routes/randomCode');
+var testRouter = require('./routes/test');
 
 // 连接数据库
 let red_config = config.redis,
@@ -45,6 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/randomCode', randomCodeRouter);
+app.use('/test', testRouter);
 // app.use('/public', express.static('public'))
 
 // catch 404 and forward to error handler

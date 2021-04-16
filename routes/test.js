@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const utils = require('../lib/utils')
+const multer = require('multer')
+const cors = require('./cors')
 
 /* GET test listing. */
 router.get('/getToken', function(req, res, next) {
@@ -25,5 +27,22 @@ router.get('/checkToken', function(req, res, next) {
     res.send('respond with a error');
   })
 });
+
+router.route('/receiveFile')
+  .options(cors.corsWithOptions, (req, res) => {
+    res.sendStatus(200)
+  })
+  .get(cors.corsWithOptions, (req, res, next) => {
+    res.sent('get')
+  })
+  .post(cors.corsWithOptions, (req, res, next) => {
+    res.sent('post')
+  })
+  .put(cors.corsWithOptions, (req, res, next) => {
+    res.sent('put')
+  })
+  .delete(cors.corsWithOptions, (req, res, next) => {
+    res.sent('delete')
+  })
 
 module.exports = router;

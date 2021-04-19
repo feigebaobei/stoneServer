@@ -33,16 +33,16 @@ router.route('/receiveFile')
     res.sendStatus(200)
   })
   .get(cors.corsWithOptions, (req, res, next) => {
-    res.sent('get')
+    res.send('receiveFile get')
   })
   .post(cors.corsWithOptions, (req, res, next) => {
-    res.sent('post')
+    res.send('post')
   })
   .put(cors.corsWithOptions, (req, res, next) => {
-    res.sent('put')
+    res.send('put')
   })
   .delete(cors.corsWithOptions, (req, res, next) => {
-    res.sent('delete')
+    res.send('delete')
   })
 
 module.exports = router;
